@@ -41,12 +41,13 @@ if submit_button:
         try:
             data, count = supabase.table('survey').insert([
                 {
+                    'username': name,
                     'is_student': is_student,
                     'which_course': which_course,
                     'favorite_language': favorite_language,
                     'learn_with_books': learn_with_books,
                     'wanted_language': wanted_language,
-                    'username': name,
+                    
                 }
             ]).execute()
 
