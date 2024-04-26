@@ -47,9 +47,13 @@ st.write("# Connexion")
 
 def create_pie_chart(data, title, size=100):
     fig, ax = plt.subplots(figsize=(6*size/100, 6*size/100))
-    ax.pie(data.values, labels=data.index, autopct='%1.1f%%', startangle=90)
+    wedges, texts, autotexts = ax.pie(data.values, labels=data.index, autopct='%1.1f%%', startangle=90)
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     ax.set_title(title)
+    ax.legend(wedges, data.index,
+        title="Langues",
+        loc="center left",
+        bbox_to_anchor=(1, 0, 0.5, 1))
     st.pyplot(fig)
 
 with st.form("login_form"):
