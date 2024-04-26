@@ -6,10 +6,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-load_dotenv()
+import toml
 
-url = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_KEY")
+config = toml.load("config.toml")
+
+url = config["SUPABASE"]["URL"]
+key = config["SUPABASE"]["KEY"]
+
 supabase: Client = create_client(url, key)
 is_logged_in = False
 def create_bar_plot(data, title, xlabel, ylabel, size=100):
