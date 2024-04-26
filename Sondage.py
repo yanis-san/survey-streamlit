@@ -14,16 +14,16 @@ supabase: Client = create_client(url, key)
 
 
 with st.form(key='my_form'):
-    st.write('### Etes-vous étudiant chez nous ?')
+    st.write('### Avez-vous déja étudié chez nous ?')
     is_student = st.radio('Etudiant', ['Oui', 'Non'], key='is_student', label_visibility='hidden')
     
     st.write('### Si oui, quel cours avez-vous déjà suivi ?')
-    which_course = st.radio('Cours suivi', ['Japonais', 'Chinois', 'Coréen','Je ne suis pas étudiant chez vous mais je souhaite donner mon avis'], key='which_course', label_visibility='hidden')
+    which_course = st.radio('Cours suivi', ['Japonais', 'Chinois','Coréen', 'Plusieurs','Autre','Je ne suis pas étudiant chez vous mais je souhaite donner mon avis'], key='which_course', label_visibility='hidden')
     
     st.write('### Quelle langue vous intéresse le plus chez nous ?')
     favorite_language = st.radio('Langue préférée', ['Japonais', 'Chinois', 'Coréen'], key='favorite_language', label_visibility='hidden')
     
-    st.write('### Avez-vous déjà appris une langue avec un livre ?')
+    st.write('### Avez-vous déjà appris une langue à l\'aide un livre ?')
     learn_with_books = st.radio('Appris avec un livre', ['Oui', 'Non'], key='learn_with_books', label_visibility='hidden')
     
     st.write('### Vous préférez que les livres soient dans quelle langue ?')
