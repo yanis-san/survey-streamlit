@@ -1,17 +1,14 @@
 import streamlit as st
 import os
 from supabase import create_client, Client
-from dotenv import load_dotenv
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-import toml
 
-config = toml.load("config.toml")
-
-url = config["SUPABASE"]["URL"]
-key = config["SUPABASE"]["KEY"]
+url = st.secrets["SUPABASE"]["URL"]
+key = st.secrets["SUPABASE"]["KEY"]
 
 supabase: Client = create_client(url, key)
 
