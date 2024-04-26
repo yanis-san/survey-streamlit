@@ -14,6 +14,9 @@ supabase: Client = create_client(url, key)
 
 
 with st.form(key='my_form'):
+    st.write('### Adresse e-mail')
+    name = st.text_input('Entrez votre adresse e-mail', '')
+
     st.write('### Avez-vous déja étudié chez nous ?')
     is_student = st.radio('Etudiant', ['Oui', 'Non'], key='is_student', label_visibility='hidden')
     
@@ -38,7 +41,8 @@ if submit_button:
                 'which_course': which_course,
                 'favorite_language': favorite_language,
                 'learn_with_books': learn_with_books,
-                'wanted_language': wanted_language
+                'wanted_language': wanted_language,
+                'username': name,
             }
         ]).execute()
 
