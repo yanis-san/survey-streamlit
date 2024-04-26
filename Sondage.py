@@ -14,8 +14,8 @@ supabase: Client = create_client(url, key)
 
 
 with st.form(key='my_form'):
-    st.write('### Nom ou adresse mail')
-    name = st.text_input('Saisissez votre nom ou votre adresse mail', '')
+    st.write('### Nom ou adresse e-mail')
+    name = st.text_input('Saisissez votre nom ou votre adresse e-mail', '')
 
     st.write('### Avez-vous déja étudié chez nous ?')
     is_student = st.radio('Etudiant', ['Oui', 'Non'], key='is_student', label_visibility='hidden')
