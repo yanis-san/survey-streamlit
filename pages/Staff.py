@@ -91,4 +91,5 @@ if is_logged_in:
     create_pie_chart(language_counts_students, 'Répartition des langues favorites pour les étudiants de l\'institut torii', size=150)
 
     df['created_at'] = (pd.to_datetime(df['created_at']) + pd.Timedelta(hours=3)).dt.strftime('%Y-%m-%d %H:%M:%S')
+    df = df.drop(columns=['id'])
     st.write(df)
