@@ -34,21 +34,25 @@ with st.form(key='my_form'):
     
     submit_button = st.form_submit_button(label='Soumettre')
 if submit_button:
-    try:
-        data, count = supabase.table('survey').insert([
-            {
-                'is_student': is_student,
-                'which_course': which_course,
-                'favorite_language': favorite_language,
-                'learn_with_books': learn_with_books,
-                'wanted_language': wanted_language,
-                'username': name,
-            }
-        ]).execute()
+    if name == '':
+        st.error('Veuillez saisir un nom ou une adresse e-mail.')
+        st.stop()
+    else:
+        try:
+            data, count = supabase.table('survey').insert([
+                {
+                    'is_student': is_student,
+                    'which_course': which_course,
+                    'favorite_language': favorite_language,
+                    'learn_with_books': learn_with_books,
+                    'wanted_language': wanted_language,
+                    'username': name,
+                }
+            ]).execute()
 
-        if count == 0:
+            if count == 0:
+                st.error('Une erreur est survenue lors de l\'insertion des données dans la base de données.')
+            else:
+                st.success('Merci pour votre participation ! Nous avons bien reçu vos réponses.')
+        except Exception as e:
             st.error('Une erreur est survenue lors de l\'insertion des données dans la base de données.')
-        else:
-            st.success('Merci pour votre participation ! Nous avons bien reçu vos réponses.')
-    except Exception as e:
-        st.error('Une erreur est survenue lors de l\'insertion des données dans la base de données.')
