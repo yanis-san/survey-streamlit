@@ -26,7 +26,7 @@ with st.form(key='my_form'):
     st.write('### Quelle langue vous intéresse le plus chez nous ?')
     favorite_language = st.radio('Langue préférée', ['Japonais', 'Chinois', 'Coréen'], key='favorite_language', label_visibility='hidden')
     
-    st.write('### Avez-vous déjà appris une langue à l\'aide un livre ?')
+    st.write('### Avez-vous déjà appris une langue à l\'aide d\'un livre ?')
     learn_with_books = st.radio('Appris avec un livre', ['Oui', 'Non'], key='learn_with_books', label_visibility='hidden')
     
     st.write('### Vous préférez que les livres soient dans quelle langue ?')
