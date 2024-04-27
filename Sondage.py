@@ -21,7 +21,7 @@ with st.form(key='my_form'):
     is_student = st.radio('Etudiant', ['Oui', 'Non'], key='is_student', label_visibility='hidden')
     
     st.write('### Si oui, quel cours avez-vous déjà suivi ?')
-    which_course = st.radio('Cours suivi', ['Japonais', 'Chinois','Coréen', 'Plusieurs','Autre','Je ne suis pas étudiant chez vous mais je souhaite donner mon avis'], key='which_course', label_visibility='hidden')
+    which_course = st.radio('Cours suivi', ['Japonais', 'Chinois','Coréen', 'Plusieurs','Autre','Je ne suis pas étudiant(e) chez vous mais je souhaite donner mon avis'], key='which_course', label_visibility='hidden')
     
     st.write('### Quelle langue vous intéresse le plus chez nous ?')
     favorite_language = st.radio('Langue préférée', ['Japonais', 'Chinois', 'Coréen'], key='favorite_language', label_visibility='hidden')
